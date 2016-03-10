@@ -283,7 +283,7 @@ The kernel is defined in a high-level language (CUDA C++ in this example) in its
       *output = input + 42.0f;
     }
 
-    The host code is defined in another file:
+The host code is defined in another file:
 
 .. code-block:: c++
 
