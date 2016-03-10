@@ -285,7 +285,7 @@ The kernel is defined in a high-level language (CUDA C++ in this example) in its
 
     The host code is defined in another file:
 
-    .. code-block:: c++
+.. code-block:: c++
 
     // File: example_host_code.cc
 
