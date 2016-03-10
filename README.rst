@@ -385,7 +385,7 @@ Under the hood, gpucc converts the triple angle bracket kernel call into a serie
 
 Clang currently supports the triple angle bracket kernel call syntax for CUDA compilation by replacing a triple angle bracket call with calls to the NVIDIA CUDA runtime library, but it would be easy to add a compiler flag to tell Clang to emit calls to the StreamExecutor library instead. There are several benefits to supporting this mode of compilation in Clang:
 
-.. _benefits-of-streamexecutor:
+.. _benefits:
 
 * StreamExecutor is a high-level, modern C++ API, so is easier to use and less prone to error than the NVIDIA CUDA runtime and the OpenCL runtime.
 * StreamExecutor will be open-source software, so GPU code will not have to depend on opaque binary blobs like the NVIDIA CUDA runtime library.
@@ -472,6 +472,6 @@ The Clang OpenMP community is currently in the process of `designing their imple
 
 .. _designing their implementation: https://drive.google.com/a/google.com/file/d/0B-jX56_FbGKRM21sYlNYVnB4eFk/view
 
-In addition to the `benefits<benefits-of-streamexecutor>`_ that all users of StreamExecutor enjoy over the alternative host-side runtime libraries, OpenMP and StreamExecutor may mutually benefit by sharing work to support new platforms. If OpenMP makes use of StreamExecutor, then it should be simple for OpenMP to add support for any new platforms that StreamExecutor supports in the future. Similarly, for any platforms OpenMP would like to target, they may add that support in StreamExecutor and take advantage of the knowledge of platform support in the StreamExecutor community. The resulting new platform support would then be available not just within OpenMP, but also to any user of StreamExecutor.
+In addition to the benefits_ that all users of StreamExecutor enjoy over the alternative host-side runtime libraries, OpenMP and StreamExecutor may mutually benefit by sharing work to support new platforms. If OpenMP makes use of StreamExecutor, then it should be simple for OpenMP to add support for any new platforms that StreamExecutor supports in the future. Similarly, for any platforms OpenMP would like to target, they may add that support in StreamExecutor and take advantage of the knowledge of platform support in the StreamExecutor community. The resulting new platform support would then be available not just within OpenMP, but also to any user of StreamExecutor.
 
 Although OpenMP and StreamExecutor support different programming models, some of the work they perform under the hood will likely be very similar. By sharing code and domain expertise, both projects will be improved and strengthened as their capabilities are expanded. The StreamExecutor community looks forward to much collaboration and discussion with OpenMP about the best places and ways to cooperate.
