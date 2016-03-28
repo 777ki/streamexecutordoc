@@ -12,18 +12,18 @@ Introduction
 
 **StreamExecutor** and **libomptarget** are libraries that are both meant to
 solve the problem of providing runtime support for offloading computational
-work to an accelerator device. The libomptarget library is already hosted as an
-LLVM subproject, and there is currently a proposal to create another LLVM
-subproject containing StreamExecutor. To avoid maintaining duplicate
-functionality in LLVM, it has further been proposed that StreamExecutor
-implement its platform plugins as thin wrappers around libomptarget RTL
-instances. This document explains why that proposal does not work given the
-current APIs of the two libraries, and talks about cases where it might make
-sense.
+work to an accelerator device. The libomptarget library is already hosted
+within the OpenMP LLVM subproject, and there is currently a proposal to create
+another LLVM subproject containing StreamExecutor. To avoid maintaining
+duplicate functionality in LLVM, it has further been proposed that
+StreamExecutor implement its platform plugins as thin wrappers around
+libomptarget RTL instances. This document explains why that proposal does not
+work given the current APIs of the two libraries, and talks about cases where
+it might make sense.
 
 Despite the similarities between the two libraries, the libomptarget RTL API
 does not support the notion of streams of execution so it cannot be used to
-implement StreamExecutor platforms.
+implement general StreamExecutor platforms.
 
 If the libomptarget RTL interface is extended to support streams in the future,
 it may then become feasible to implement StreamExecutor on top of libomptarget,
